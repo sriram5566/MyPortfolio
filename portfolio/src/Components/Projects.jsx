@@ -1,6 +1,9 @@
 import React from "react";
 import portfolio from "../assets/protfolio.png";
-import industry from "../assets/industry.png";
+import industry from "../assets/Pet Adoption.jpg";
+import AccidentPrevention from "../assets/Accident Prevention.png";
+import Snakegame from "../assets/Snakegame.png";
+import  RentalCar from "../assets/RentalCar.jpg";
 
 const project = () => {
   const portfolios = [
@@ -14,6 +17,24 @@ const project = () => {
       id: 2,
       title: "PET ADOPTION",
       src: industry,
+      style: "shadow-blue-500",
+    },
+    {
+      id: 3,
+      title: "SENSOR MECHANISM FOR ACCIDENT PREVENTION",
+      src: AccidentPrevention,
+      style: "shadow-blue-500",
+    },
+    {
+      id: 4,
+      title: "SNAKE GAME",
+      src: Snakegame,
+      style: "shadow-blue-500",
+    },
+    {
+      id: 5,
+      title: "RENTAL CAR",
+      src: RentalCar,
       style: "shadow-blue-500",
     },
   ];
@@ -31,14 +52,14 @@ const project = () => {
           <p className="py-6">Check out some of my work right here</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-19 sm:px-0">
-          {portfolios.map(({ id, src }) => (
-            <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
-              <img
-                src={src}
-                alt=""
-                className="rounded-md duration-200 hover:scale-105"
-              />
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
+          {portfolios.map(({ id, src, title, style }) => (
+            <div
+              key={id}
+              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
+            >
+              <img src={src} alt="" className="w-20 mx-auto" />
+              <p className="mt-4">{title}</p>
             </div>
           ))}
         </div>
@@ -48,3 +69,4 @@ const project = () => {
 };
 
 export default project;
+
